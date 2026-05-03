@@ -278,60 +278,69 @@
             </p>
         </footer>
     </div>
-<script>
-    // আইকন লোড করা
-    lucide.createIcons();
 
-    // কাউন্টডাউন ফাংশন
-    function startCountdown() {
-        const targetDate = new Date("May 24, 2026 20:30:00").getTime();
+    <!-- JavaScript -->
+    <script>
+        lucide.createIcons();
 
-        const timerInterval = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-
-            if (distance < 0) {
-                clearInterval(timerInterval);
-                document.getElementById("floating-timer").style.display = "none";
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-            // ডাটা আপডেট করা
-            document.getElementById("days").innerText = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-            document.getElementById("mins").innerText = minutes.toString().padStart(2, '0');
+        function revealSite() {
+            const overlay = document.getElementById('invitation-overlay');
+            const mainSite = document.getElementById('main-site');
             
-        }, 1000);
-    }
-
-    // সাইট রিভিল করার মূল ফাংশন
-    function revealSite() {
-        const overlay = document.getElementById('invitation-overlay');
-        const mainSite = document.getElementById('main-site');
-        const timer = document.getElementById('floating-timer');
-        
-        // এনিমেশন শুরু
-        overlay.style.opacity = '0';
-        overlay.style.transform = 'scale(1.1) translateY(-50px)';
-        
-        setTimeout(() => {
-            overlay.style.display = 'none';
-            mainSite.style.display = 'block';
-            timer.style.display = 'block'; // টাইমার দেখানো
-            document.body.style.overflow = 'auto'; // স্ক্রল চালু
+            overlay.style.opacity = '0';
+            overlay.style.transform = 'scale(1.1) translateY(-50px)';
             
             setTimeout(() => {
-                mainSite.style.opacity = '1';
-                startCountdown(); // সাইট দেখা যাওয়ার পর কাউন্টডাউন শুরু
-            }, 100);
-        }, 800);
-    }
-</script>
+                overlay.style.display = 'none';
+                mainSite.style.display = 'block';
+                document.body.style.overflow = 'auto'; // স্ক্রল চালু
+                
+                setTimeout(() => {
+                    mainSite.style.opacity = '1';
+                }, 100);
+            }, 800);
+        }
+        // কাউন্টডাউন লজিক
+function startCountdown() {
+    // লক্ষ্যমাত্রা: ২৪ মে ২০২৬, রাত ৮:৩০ (২০:৩০)
+    const targetDate = new Date("May 24, 2026 20:30:00").getTime();
 
+    const timerInterval = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        // সময় শেষ হলে টাইমার লুকানো
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.getElementById("floating-timer").style.display = "none";
+            return;
+        }
+
+        // দিন, ঘণ্টা, মিনিট গণনা
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        // HTML এ ডেটা সেট করা
+        document.getElementById("days").innerText = days.toString().padStart(2, '0');
+        document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+        document.getElementById("mins").innerText = minutes.toString().padStart(2, '0');
+        
+        // ইনভিটেশন এক্সেপ্ট করার পর টাইমার দেখানো
+        if(document.getElementById('main-site').style.display === 'block') {
+            document.getElementById("floating-timer").style.display = "block";
+        }
+    }, 1000);
+}
+
+// আপনার আগের revealSite ফাংশনের ভেতর এটি কল করুন
+const originalRevealSite = revealSite;
+revealSite = function() {
+    originalRevealSite();
+    startCountdown(); // সাইট রিভিল হলে কাউন্টডাউন শুরু হবে
+};
+
+    </script>
     <div id="floating-timer" class="fixed bottom-6 right-6 z-50 animate__animated animate__fadeInUp" style="display: none;">
     <div class="bg-emerald-950 border-2 border-yellow-500 p-4 rounded-3xl shadow-2xl flex flex-col items-center min-w-[120px] backdrop-blur-md bg-opacity-95">
         <p class="text-[10px] font-black text-yellow-400 uppercase tracking-widest mb-1">বাকি আছে</p>
