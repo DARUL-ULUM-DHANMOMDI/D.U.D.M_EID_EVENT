@@ -1,16 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>অনুষ্ঠান ২০২৬ - জামিয়া ইসলামিয়া দারুল উলুম ধানমন্ডি</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
@@ -18,11 +15,10 @@
             font-family: 'Hind Siliguri', sans-serif;
             background-color: #FDF5E6; 
             margin: 0;
-            overflow: hidden; /* শুরুতে স্ক্রল বন্ধ */
+            overflow: hidden; 
             scroll-behavior: smooth;
         }
 
-        /* দাওয়াত কার্ড স্টাইল */
         #invitation-overlay {
             position: fixed;
             inset: 0;
@@ -101,11 +97,21 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        .schedule-tab {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .schedule-tab.active {
+            background: #064e3b;
+            color: white;
+            border-color: #064e3b;
+        }
     </style>
 </head>
 <body>
 
-    <!-- [১. ডিজিটাল দাওয়াত কার্ড পপ-আপ] -->
     <div id="invitation-overlay">
         <img src="https://cdn-icons-png.flaticon.com/512/2319/2319910.png" class="lantern left-10 animate__animated animate__pulse animate__infinite" alt="Lantern">
         <img src="https://cdn-icons-png.flaticon.com/512/2319/2319910.png" class="lantern right-10 animate__animated animate__pulse animate__infinite" alt="Lantern">
@@ -144,7 +150,6 @@
         </div>
     </div>
 
-    <!-- [২. মূল ওয়েবসাইট কন্টেন্ট] -->
     <div id="main-site">
         <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-yellow-200 py-3 px-6 shadow-sm">
             <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -158,6 +163,7 @@
                 <div class="flex gap-4 md:gap-8 font-bold text-gray-600 text-sm">
                     <a href="#info" class="hover:text-yellow-700">তথ্য</a>
                     <a href="#categories" class="hover:text-yellow-700">বিষয়সমূহ</a>
+                    <a href="#schedule" class="hover:text-yellow-700">সূচী</a>
                     <a href="#contact" class="hover:text-yellow-700">যোগাযোগ</a>
                 </div>
             </div>
@@ -175,7 +181,6 @@
             </div>
         </section>
 
-        <!-- প্রতিযোগিতার বিষয়বস্তু -->
         <section id="categories" class="py-24 bg-white px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-12">
@@ -184,7 +189,6 @@
                     <div class="h-2 w-32 bg-yellow-500 mx-auto rounded-full mb-12"></div>
                 </div>
 
-                <!-- বিষয় কার্ডস -->
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
                     <div onclick="showDetails('quran')" class="category-card bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-100" id="card-quran">
                         <i data-lucide="book-open" class="mx-auto mb-3 text-emerald-700"></i>
@@ -194,7 +198,6 @@
                         <i data-lucide="languages" class="mx-auto mb-3 text-yellow-700"></i>
                         <h4 class="font-black text-yellow-900 text-sm md:text-base">হিফজুল হাদিস</h4>
                     </div>
-
                     <div onclick="showDetails('bangla')" class="category-card bg-yellow-50 p-6 rounded-2xl text-center border border-yellow-100" id="card-bangla">
                         <i data-lucide="message-square" class="mx-auto mb-3 text-yellow-700"></i>
                         <h4 class="font-black text-yellow-900 text-sm md:text-base">বাংলা বক্তৃতা</h4>
@@ -219,14 +222,10 @@
                         <i data-lucide="edit-3" class="mx-auto mb-3 text-emerald-700"></i>
                         <h4 class="font-black text-emerald-900 text-sm md:text-base">হস্তলিখন</h4>
                     </div>
-                    
                 </div>
 
-                <!-- ডিটেইল বক্স (এখানেই তথ্য দেখাবে) -->
                 <div id="detail-box" class="bg-stone-50 border-2 border-dashed border-yellow-300 rounded-[2.5rem] p-8 md:p-12 shadow-inner">
-                    <div id="detail-content" class="max-w-3xl mx-auto text-gray-800">
-                        <!-- JS এর মাধ্যমে এখানে কন্টেন্ট লোড হবে -->
-                    </div>
+                    <div id="detail-content" class="max-w-3xl mx-auto text-gray-800"></div>
                 </div>
 
                 <div class="mt-12 bg-red-50 border border-red-100 p-6 rounded-2xl text-center">
@@ -238,7 +237,69 @@
             </div>
         </section>
 
-        <!-- আয়োজক ও যোগাযোগ -->
+        <section id="schedule" class="py-24 bg-stone-100 px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">অনুষ্ঠান সূচী</h2>
+                    <div class="h-2 w-24 bg-emerald-600 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 mb-10">
+                    <button onclick="toggleSchedule('day23')" id="btn-day23" class="schedule-tab active px-8 py-4 rounded-2xl font-black text-xl shadow-md">২৩ তারিখ</button>
+                    <button onclick="toggleSchedule('day24')" id="btn-day24" class="schedule-tab px-8 py-4 rounded-2xl font-black text-xl shadow-md">২৪ তারিখ</button>
+                </div>
+
+                <div id="day23" class="space-y-4">
+                    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                        <span class="text-emerald-900 font-black text-xl">১/ কুরআন তিলাওয়াত</span>
+                        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">৮:৩০ — ১০:০০ পর্যন্ত</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                        <span class="text-emerald-900 font-black text-xl">২/ তাজভীদ</span>
+                        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">১০:০০ — ১০:৪৫ পর্যন্ত</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                        <span class="text-emerald-900 font-black text-xl">৩/ হিফজুল হাদিস</span>
+                        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">২:৩০ — ৩:৩০ পর্যন্ত</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                        <span class="text-emerald-900 font-black text-xl">৪/ নুরানি বহস</span>
+                        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">৭:০০ — ৮:০০ পর্যন্ত</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                        <span class="text-emerald-900 font-black text-xl">৫/ ইসলামিক নাশিদ</span>
+                        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">৯:৩০ — ১০:৩০ পর্যন্ত</span>
+                    </div>
+                </div>
+
+                <div id="day24" class="hidden space-y-4">
+                    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                        <span class="text-emerald-900 font-black text-xl">১/ আরবী বক্তৃতা</span>
+                        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">৫:৩০ — ৭:৪৫ পর্যন্ত</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                        <span class="text-emerald-900 font-black text-xl">২/ বাংলা বক্তৃতা (মক্কী)</span>
+                        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">৮:৩০ — ১০:০০ পর্যন্ত</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                        <span class="text-emerald-900 font-black text-xl">৩/ বাংলা বক্তৃতা (মাদানী)</span>
+                        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">১০:০০ — ১১:৩০ পর্যন্ত</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                        <span class="text-emerald-900 font-black text-xl">৪/ হস্তলিখন</span>
+                        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">২:৩০ — ৪:০০ পর্যন্ত</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div>
+                            <span class="text-emerald-900 font-black text-xl">৫/ কুইজ ও নাশিদ সন্ধ্যা</span>
+                            <p class="text-xs text-gray-400 font-bold mt-1">(মাঝখানে নামাজের বিরতি)</p>
+                        </div>
+                        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">৭:৩০ — ১০:৩০ পর্যন্ত</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="py-24 px-6 max-w-6xl mx-auto">
             <div class="bg-emerald-950 rounded-[4rem] p-10 md:p-20 shadow-2xl relative overflow-hidden text-white text-center">
                 <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/islamic-art.png');"></div>
@@ -249,15 +310,13 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto text-sm md:text-base">
                         <div class="bg-white/10 p-8 rounded-3xl backdrop-blur-md">
                             <h5 class="text-yellow-500 font-black mb-2 flex items-center gap-2"><i data-lucide="map"></i> ঠিকানা</h5>
-                            
-
                             <a href="https://www.google.com/maps/place/23%C2%B044'59.9%22N+90%C2%B021'55.9%22E/@23.749983,90.365535,17z/data=!3m1!4b1!4m4!3m3!8m2!3d23.749983!4d90.365535!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="hover:text-yellow-400 transition-colors">
                                 <p>৬৩/৫, পশ্চিম ধানমন্ডি, শংকর, ঢাকা-১২০৭, বাংলাদেশ।</p>
                             </a>
                         </div>
                         <div class="bg-white/10 p-8 rounded-3xl backdrop-blur-md">
                             <h5 class="text-yellow-500 font-black mb-2 flex items-center gap-2"><i data-lucide="phone"></i> যোগাযোগ</h5>
-                            <p class="text-2xl font-black tracking-widest">01720961795<br></p>
+                            <p class="text-2xl font-black tracking-widest">01720961795</p>
                         </div>
                     </div>
                 </div>
@@ -273,7 +332,6 @@
         </footer>
     </div>
 
-    <!-- ফ্লোটিং টাইমার -->
     <div id="floating-timer" class="fixed bottom-6 right-6 z-50 animate__animated animate__fadeInUp" style="display: none;">
         <div class="bg-emerald-950 border-2 border-yellow-500 p-4 rounded-3xl shadow-2xl flex flex-col items-center min-w-[120px] backdrop-blur-md bg-opacity-95">
             <p class="text-[10px] font-black text-yellow-400 uppercase tracking-widest mb-1">বাকি আছে</p>
@@ -290,22 +348,16 @@
     <script>
         lucide.createIcons();
 
-        // প্রতিযোগিতার তথ্য ডেটা
         const categories = {
             quran: {
                 title: "কুরআন তিলাওয়াত প্রতিযোগিতা",
                 rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "নির্ধারিত সময়ে শুরু হবে।"
+                time: "সকাল ৮:৩০ - ১০:০০"
             },
             hadith: {
                 title: "হিফজুল হাদিস (৪০টি হাদিস বর্ণনাকারীর নামসহ)",
                 rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "প্রতিযোগিতার দিন বিস্তারিত জানানো হবে।"
-            },
-            debate: {
-                title: "কুরবাণী বিষয়ক তর্ক-বিতর্ক অনুষ্ঠান",
-                rules: "অত্র জামিয়ার শিক্ষার্থীরা অংশগ্রহণ করবে। তবে দর্শনার্থী হিসাবে যেকোনো শ্রেণী-পেশার পুরুষ/মহিলা অনুষ্ঠানে যোগ দিতে পারবে।",
-                time: "অনুষ্ঠানের বিশেষ অধিবেশনে।"
+                time: "দুপুর ২:৩০ - ৩:৩০"
             },
             bangla: {
                 title: "বাংলা বক্তৃতা প্রতিযোগিতা",
@@ -317,42 +369,39 @@
                     "৫. তথ্য ও সন্ত্রাসের কবলে ইসলাম ও মুসলিম বিশ্ব।"
                 ],
                 rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "নির্ধারিত সময়সূচী অনুযায়ী।"
+                time: "সকাল ৮:৩০ - ১১:৩০ (বিভাগ অনুযায়ী)"
             },
             arabic: {
                 title: "আরবী বক্তৃতা প্রতিযোগিতা",
                 rules: "বিষয়: উন্মুক্ত। মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "বক্তৃতা সেশনে।"
+                time: "ভোর ৫:৩০ - ৭:৪৫"
             },
             song: {
                 title: "ইসলামী সংগীত প্রতিযোগিতা",
                 rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "সাংস্কৃতিক পর্বে।"
+                time: "সন্ধ্যা ৭:৩০ - ১০:৩০ সেশন"
             },
             quiz: {
                 title: "কুইজ প্রতিযোগিতা (কুরবানী বিষয়ক)",
                 rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে। নির্ধারিত পাঠ্যবই থেকে প্রশ্ন করা হবে।",
-                time: "কুইজ সেশনে।"
+                time: "সন্ধ্যা সেশনে"
             },
             tajweed: {
                 title: "তাজবীদ প্রতিযোগিতা",
                 rules: "মাদরাসা (হিফজুল কুরআন বিভাগ পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "সকাল ৯:০০ টা থেকে।"
+                time: "সকাল ১০:০০ - ১০:৪৫"
             },
             handwriting: {
                 title: "হস্তলিখন প্রতিযোগিতা (আরবী ও বাংলা)",
                 rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে। লেখা অনুর্ধ্ব ১০ লাইন হতে হবে।",
-                time: "নির্ধারিত কক্ষে।"
+                time: "দুপুর ২:৩০ - ৪:০০"
             },
-           
         };
 
         function showDetails(id) {
             const data = categories[id];
             const detailBox = document.getElementById('detail-box');
             const content = document.getElementById('detail-content');
-
-            // সব কার্ড থেকে একটিভ ক্লাস সরানো
             document.querySelectorAll('.category-card').forEach(card => card.classList.remove('active'));
             document.getElementById('card-' + id).classList.add('active');
 
@@ -361,7 +410,6 @@
                     <h3 class="text-3xl font-black text-emerald-900 mb-6 flex items-center gap-3">
                         <span class="w-3 h-10 bg-yellow-500 rounded-full"></span> ${data.title}
                     </h3>
-                    
                     <div class="space-y-6">
                         ${data.topics ? `
                             <div>
@@ -371,49 +419,51 @@
                                 </ul>
                             </div>
                         ` : ''}
-
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
                             <h4 class="font-black text-emerald-800 mb-2">অংশগ্রহণের নিয়মাবলী:</h4>
                             <p class="font-bold text-gray-600 leading-relaxed">${data.rules}</p>
                         </div>
-
                         <div class="flex items-center gap-4 bg-emerald-900 text-white p-4 rounded-2xl">
                             <i data-lucide="clock" class="w-6 h-6 text-yellow-400"></i>
                             <div>
-                                <p class="text-xs opacity-70 font-bold uppercase tracking-widest leading-none">অনুষ্ঠানের সময়</p>
+                                <p class="text-xs opacity-70 font-bold uppercase tracking-widest leading-none">সময়</p>
                                 <p class="text-xl font-black">${data.time}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             `;
-
             content.innerHTML = html;
             detailBox.style.display = 'block';
             lucide.createIcons();
-
-            // ডিটেইল বক্সে স্ক্রল করা
             detailBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         function revealSite() {
             const overlay = document.getElementById('invitation-overlay');
             const mainSite = document.getElementById('main-site');
-            
             overlay.style.opacity = '0';
             overlay.style.transform = 'scale(1.1) translateY(-50px)';
-            
             setTimeout(() => {
                 overlay.style.display = 'none';
                 mainSite.style.display = 'block';
                 document.body.style.overflow = 'auto';
-                
                 setTimeout(() => {
                     mainSite.style.opacity = '1';
                     startCountdown();
                     document.getElementById("floating-timer").style.display = "block";
                 }, 100);
             }, 800);
+        }
+
+        function toggleSchedule(day) {
+            document.getElementById('day23').classList.add('hidden');
+            document.getElementById('day24').classList.add('hidden');
+            document.getElementById('btn-day23').classList.remove('active');
+            document.getElementById('btn-day24').classList.remove('active');
+
+            document.getElementById(day).classList.remove('hidden');
+            document.getElementById('btn-' + day).classList.add('active');
         }
 
         function startCountdown() {
@@ -433,3 +483,4 @@
     </script>
 </body>
 </html>
+
