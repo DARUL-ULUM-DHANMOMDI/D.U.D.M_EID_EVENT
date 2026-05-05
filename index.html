@@ -182,59 +182,132 @@
         </section>
 
         <section id="categories" class="py-24 bg-white px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">প্রতিযোগিতার বিষয়সমূহ</h2>
-                    <p class="text-gray-500 font-bold italic mb-8">বিস্তারিত নিয়ম দেখতে বিষয়ের ওপর ক্লিক করুন</p>
-                    <div class="h-2 w-32 bg-yellow-500 mx-auto rounded-full mb-12"></div>
-                </div>
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">প্রতিযোগিতার বিষয়সমূহ</h2>
+            <p class="text-gray-500 font-bold italic mb-8">বিস্তারিত নিয়ম দেখতে বিষয়ের ওপর ক্লিক করুন</p>
+            <div class="h-2 w-32 bg-yellow-500 mx-auto rounded-full mb-12"></div>
+        </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-                    <div onclick="showDetails('quran')" class="category-card bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-100" id="card-quran">
-                        <i data-lucide="book-open" class="mx-auto mb-3 text-emerald-700"></i>
-                        <h4 class="font-black text-emerald-900 text-sm md:text-base">কুরআন তিলাওয়াত</h4>
-                    </div>
-                    <div onclick="showDetails('hadith')" class="category-card bg-yellow-50 p-6 rounded-2xl text-center border border-yellow-100" id="card-hadith">
-                        <i data-lucide="languages" class="mx-auto mb-3 text-yellow-700"></i>
-                        <h4 class="font-black text-yellow-900 text-sm md:text-base">হিফজুল হাদিস</h4>
-                    </div>
-                    <div onclick="showDetails('bangla')" class="category-card bg-yellow-50 p-6 rounded-2xl text-center border border-yellow-100" id="card-bangla">
-                        <i data-lucide="message-square" class="mx-auto mb-3 text-yellow-700"></i>
-                        <h4 class="font-black text-yellow-900 text-sm md:text-base">বাংলা বক্তৃতা</h4>
-                    </div>
-                    <div onclick="showDetails('arabic')" class="category-card bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-100" id="card-arabic">
-                        <i data-lucide="pen-tool" class="mx-auto mb-3 text-emerald-700"></i>
-                        <h4 class="font-black text-emerald-900 text-sm md:text-base">আরবী বক্তৃতা</h4>
-                    </div>
-                    <div onclick="showDetails('song')" class="category-card bg-yellow-50 p-6 rounded-2xl text-center border border-yellow-100" id="card-song">
-                        <i data-lucide="music" class="mx-auto mb-3 text-yellow-700"></i>
-                        <h4 class="font-black text-yellow-900 text-sm md:text-base">ইসলামী সংগীত</h4>
-                    </div>
-                    <div onclick="showDetails('quiz')" class="category-card bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-100" id="card-quiz">
-                        <i data-lucide="help-circle" class="mx-auto mb-3 text-emerald-700"></i>
-                        <h4 class="font-black text-emerald-900 text-sm md:text-base">কুইজ</h4>
-                    </div>
-                    <div onclick="showDetails('tajweed')" class="category-card bg-yellow-50 p-6 rounded-2xl text-center border border-yellow-100" id="card-tajweed">
-                        <i data-lucide="check-circle" class="mx-auto mb-3 text-yellow-700"></i>
-                        <h4 class="font-black text-yellow-900 text-sm md:text-base">তাজবীদ</h4>
-                    </div>
-                    <div onclick="showDetails('handwriting')" class="category-card bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-100" id="card-handwriting">
-                        <i data-lucide="edit-3" class="mx-auto mb-3 text-emerald-700"></i>
-                        <h4 class="font-black text-emerald-900 text-sm md:text-base">হস্তলিখন</h4>
-                    </div>
-                </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+            <!-- ১/ কুরআন তিলাওয়াত -->
+            <div onclick="showDetails('quran')" class="category-card bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-100" id="card-quran">
+                <i data-lucide="book-open" class="mx-auto mb-3 text-emerald-700"></i>
+                <h4 class="font-black text-emerald-900 text-sm md:text-base">১. কুরআন তিলাওয়াত</h4>
+            </div>
 
-                <div id="detail-box" class="bg-stone-50 border-2 border-dashed border-yellow-300 rounded-[2.5rem] p-8 md:p-12 shadow-inner">
-                    <div id="detail-content" class="max-w-3xl mx-auto text-gray-800"></div>
-                </div>
+            <!-- ২/ তাজভীদ -->
+            <div onclick="showDetails('tajweed')" class="category-card bg-yellow-50 p-6 rounded-2xl text-center border border-yellow-100" id="card-tajweed">
+                <i data-lucide="check-circle" class="mx-auto mb-3 text-yellow-700"></i>
+                <h4 class="font-black text-yellow-900 text-sm md:text-base">২. তাজভীদ</h4>
+            </div>
 
-                <div class="mt-12 bg-red-50 border border-red-100 p-6 rounded-2xl text-center">
-                    <p class="text-red-900 font-black text-lg">
-                        <i data-lucide="alert-circle" class="inline-block mr-2 w-5 h-5"></i>
-                        বিঃ দ্রঃ প্রত্যেক প্রতিযোগীকে অবশ্যই ফরম পূরণ ও রেজিস্ট্রেশন ফি: ১১৩ টাকা জমা দিয়ে অংশগ্রহণ করতে হবে।
-                    </p>
+            <!-- ৩/ হিফজুল হাদিস -->
+            <div onclick="showDetails('hadith')" class="category-card bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-100" id="card-hadith">
+                <i data-lucide="languages" class="mx-auto mb-3 text-emerald-700"></i>
+                <h4 class="font-black text-emerald-900 text-sm md:text-base">৩. হিফজুল হাদিস</h4>
+            </div>
+
+            <!-- ৪/ আরবী বক্তৃতা -->
+            <div onclick="showDetails('arabic')" class="category-card bg-yellow-50 p-6 rounded-2xl text-center border border-yellow-100" id="card-arabic">
+                <i data-lucide="pen-tool" class="mx-auto mb-3 text-yellow-700"></i>
+                <h4 class="font-black text-yellow-900 text-sm md:text-base">৪. আরবী বক্তৃতা</h4>
+            </div>
+
+            <!-- ৫/ বাংলা বক্তৃতা -->
+            <div onclick="showDetails('bangla')" class="category-card bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-100" id="card-bangla">
+                <i data-lucide="message-square" class="mx-auto mb-3 text-emerald-700"></i>
+                <h4 class="font-black text-emerald-900 text-sm md:text-base">৫. বাংলা বক্তৃতা</h4>
+            </div>
+
+            <!-- ৬/ হস্তলিখন -->
+            <div onclick="showDetails('handwriting')" class="category-card bg-yellow-50 p-6 rounded-2xl text-center border border-yellow-100" id="card-handwriting">
+                <i data-lucide="edit-3" class="mx-auto mb-3 text-yellow-700"></i>
+                <h4 class="font-black text-yellow-900 text-sm md:text-base">৬. হস্তলিখন</h4>
+            </div>
+
+            <!-- ৭/ হামদ-নাত -->
+            <div onclick="showDetails('song')" class="category-card bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-100" id="card-song">
+                <i data-lucide="music" class="mx-auto mb-3 text-emerald-700"></i>
+                <h4 class="font-black text-emerald-900 text-sm md:text-base">৭. হামদ-নাত</h4>
+            </div>
+
+          
+
+            <!-- ৮/ কুইজ -->
+            <div onclick="showDetails('quiz')" class="category-card bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-100" id="card-quiz">
+                <i data-lucide="help-circle" class="mx-auto mb-3 text-emerald-700"></i>
+                <h4 class="font-black text-emerald-900 text-sm md:text-base">৮. কুইজ</h4>
+            </div>
+        </div>
+
+        <div id="detail-box" class="bg-stone-50 border-2 border-dashed border-yellow-300 rounded-[2.5rem] p-8 md:p-12 shadow-inner">
+            <div id="detail-content" class="max-w-3xl mx-auto text-gray-800">
+                <p class="text-center text-gray-400 font-bold">একটি বিষয় সিলেক্ট করুন বিস্তারিত দেখার জন্য</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+             <div class="mt-12 max-w-4xl mx-auto">
+    <div class="bg-gradient-to-br from-red-50 via-white to-red-50 border-2 border-red-200 p-8 rounded-[2.5rem] shadow-sm relative overflow-hidden">
+        
+        <!-- ডেকোরেশন -->
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-red-100 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-orange-100 rounded-full blur-3xl opacity-50"></div>
+
+        <div class="relative z-10 flex flex-col items-center">
+            <!-- আইকন এবং হেডার -->
+            <div class="bg-red-600 p-3 rounded-2xl shadow-lg mb-6 transform -rotate-3">
+                <i data-lucide="alert-circle" class="text-white w-8 h-8"></i>
+            </div>
+
+            <h3 class="text-2xl md:text-3xl font-black text-red-900 mb-4 text-center">জরুরী বিশেষ দ্রষ্টব্য</h3>
+
+            <div class="space-y-6 text-center">
+                <p class="text-gray-700 text-lg md:text-xl font-bold leading-relaxed max-w-2xl">
+                    প্রতিযোগীরা <span class="text-emerald-700 font-black">অনলাইন</span> অথবা <span class="text-emerald-700 font-black">অফলাইন</span> যেকোনো মাধ্যমেই রেজিস্ট্রেশন করতে পারবে। তবে প্রতিটি প্রতিযোগিতার জন্য আলাদাভাবে নির্ধারিত  
+                    <span class="text-red-600 font-black text-2xl mx-1 underline decoration-wavy decoration-red-300">১১৩/-</span> 
+                    টাকা ফি জমা দিয়ে অংশগ্রহণ নিশ্চিত করতে হবে।
+                </p>
+
+                <!-- ডেডলাইন এবং মাধ্যম সেকশন -->
+                <div class="flex flex-col gap-4 items-center">
+                    <div class="inline-flex flex-col md:flex-row items-center gap-3 bg-white border-2 border-red-100 px-6 py-4 rounded-3xl shadow-inner">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="calendar-days" class="text-red-500 w-6 h-6"></i>
+                            <span class="text-gray-500 font-black uppercase tracking-wider">সর্বশেষ তারিখ:</span>
+                        </div>
+                        <span class="text-2xl font-black text-gray-900 border-l-0 md:border-l-2 md:pl-4 border-red-200">
+                            ২০শে মে, ২০২৬ইং
+                        </span>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <span class="bg-emerald-100 text-emerald-700 px-4 py-1 rounded-full text-sm font-black border border-emerald-200">Online</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-black border border-blue-200">Offline</span>
+                    </div>
                 </div>
             </div>
+
+            <!-- ছোট ট্যাগ -->
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <div class="flex items-center gap-1 text-red-700/60 text-xs font-black">
+                    <i data-lucide="copy-check" class="w-4 h-4"></i>
+                    প্রতিটি বিষয়ের জন্য আলাদা ফি
+                </div>
+                <div class="flex items-center gap-1 text-red-700/60 text-xs font-black">
+                    <i data-lucide="check-square" class="w-4 h-4"></i>
+                    সঠিক তথ্য প্রদান করুন
+                </div>
+                <div class="flex items-center gap-1 text-red-700/60 text-xs font-black">
+                    <i data-lucide="credit-card" class="w-4 h-4"></i>
+                    রেজিস্ট্রেশন ফি বাধ্যতামূলক
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         </section>
 
         <section id="schedule" class="py-24 bg-stone-100 px-6">
@@ -249,51 +322,67 @@
                 
                 </div>
 
-                <div id="day23" class="space-y-4">
-                    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                        <span class="text-emerald-900 font-black text-xl">১/ কুরআন তিলাওয়াত</span>
-                        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">৮:৩০ — ১০:০০ পর্যন্ত</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                        <span class="text-emerald-900 font-black text-xl">২/ তাজভীদ</span>
-                        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">১০:০০ — ১০:৪৫ পর্যন্ত</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                        <span class="text-emerald-900 font-black text-xl">৩/ হিফজুল হাদিস</span>
-                        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">২:৩০ — ৩:৩০ পর্যন্ত</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                        <span class="text-emerald-900 font-black text-xl">৪/ কুরবানী বহস</span>
-                        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">৭:০০ — ৮:০০ পর্যন্ত</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                        <span class="text-emerald-900 font-black text-xl">৫/ ইসলামিক নাশিদ</span>
-                        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">৯:৩০ — ১০:৩০ পর্যন্ত</span>
-                    </div>
-                
+<div id="day23" class="space-y-4">
+    <!-- ১/ কুরআন তিলাওয়াত -->
+    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="text-emerald-900 font-black text-xl">১/ কুরআন তিলাওয়াত</span>
+        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">৭:৪৫ — ৮:৪৫ পর্যন্ত</span>
+    </div>
 
-                <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                        <span class="text-emerald-900 font-black text-xl">৬/ আরবী বক্তৃতা</span>
-                        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">৫:৩০ — ৭:৪৫ পর্যন্ত</span>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                        <span class="text-emerald-900 font-black text-xl">৭/ বাংলা বক্তৃতা</span>
-                        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">১০:০০ — ১১:৩০ পর্যন্ত</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                        <span class="text-emerald-900 font-black text-xl">৮/ হস্তলিখন</span>
-                        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">২:৩০ — ৪:০০ পর্যন্ত</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                        <div>
-                            <span class="text-emerald-900 font-black text-xl">৯/ কুইজ </span>
-                            <p class="text-xs text-gray-400 font-bold mt-1">(মাঝখানে নামাজের বিরতি)</p>
-                        </div>
-                        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">৭:৩০ — ১০:৩০ পর্যন্ত</span>
-                    </div>
-                </div>
-            </div>
+    <!-- ২/ তাজভীদ -->
+    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="text-emerald-900 font-black text-xl">২/ তাজভীদ</span>
+        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">৯:০০ — ৯:৪০ পর্যন্ত</span>
+    </div>
+
+    <!-- ৩/ হিফজুল হাদিস -->
+    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="text-emerald-900 font-black text-xl">৩/ হিফজুল হাদিস</span>
+        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">১০:০০ — ১০:৫০ পর্যন্ত</span>
+    </div>
+
+    <!-- ৪/ আরবী বক্তৃতা -->
+    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="text-emerald-900 font-black text-xl">৪/ আরবী বক্তৃতা</span>
+        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">১১:০০ — ১২:০০ পর্যন্ত</span>
+    </div>
+
+    <!-- ৫/ বাংলা বক্তৃতা -->
+    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="text-emerald-900 font-black text-xl">৫/ বাংলা বক্তৃতা</span>
+        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">২:০০ — ৩:৩০ পর্যন্ত</span>
+    </div>
+
+    <!-- ৬/ হস্তলিখন -->
+    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="text-emerald-900 font-black text-xl">৬/ হস্তলিখন</span>
+        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">৩:৪০ — ৪:৩০ পর্যন্ত</span>
+    </div>
+
+    <!-- ৭/ হামদ-নাত (ইসলামিক নাশিদ) -->
+    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="text-emerald-900 font-black text-xl">৭/ হামদ-নাত</span>
+        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">৭:১৫ — ৮:০০ পর্যন্ত</span>
+    </div>
+
+    <!-- ৮/ কোরবানী বহ্স -->
+    <div class="bg-white p-6 rounded-3xl border-l-8 border-emerald-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="text-emerald-900 font-black text-xl">৮/ কোরবানী বহ্স</span>
+        <span class="bg-emerald-50 text-emerald-700 px-6 py-2 rounded-full font-bold border border-emerald-100">৯:১৫ — ১০:০০ পর্যন্ত</span>
+    </div>
+
+    <!-- ৯/ কুইজ -->
+    <div class="bg-white p-6 rounded-3xl border-l-8 border-yellow-600 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>
+            <span class="text-emerald-900 font-black text-xl">৯/ কুইজ</span>
+            <p class="text-xs text-gray-400 font-bold mt-1">(নির্ধারিত পাঠ্যবই থেকে)</p>
+        </div>
+        <span class="bg-yellow-50 text-yellow-700 px-6 py-2 rounded-full font-bold border border-yellow-100">১০:০০ — ১০:৪৫ পর্যন্ত</span>
+    </div>
+</div>
+
+
+
         </section>
 
         <section id="contact" class="py-24 px-6 max-w-6xl mx-auto">
@@ -312,7 +401,7 @@
                         </div>
                         <div class="bg-white/10 p-8 rounded-3xl backdrop-blur-md">
                             <h5 class="text-yellow-500 font-black mb-2 flex items-center gap-2"><i data-lucide="phone"></i> যোগাযোগ</h5>
-                            <p class="text-2xl font-black tracking-widest">01720961795<br>+880 1969-878677 </p>
+                            <p class="text-2xl font-black tracking-widest">01720961795<br>01969878677 </p>
                         </div>
                     </div>
                 </div>
@@ -345,54 +434,60 @@
         lucide.createIcons();
 
         const categories = {
-            quran: {
-                title: "কুরআন তিলাওয়াত প্রতিযোগিতা",
-                rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "সকাল ৮:৩০ - ১০:০০"
-            },
-            hadith: {
-                title: "হিফজুল হাদিস (৪০টি হাদিস বর্ণনাকারীর নামসহ)",
-                rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "দুপুর ২:৩০ - ৩:৩০"
-            },
-            bangla: {
-                title: "বাংলা বক্তৃতা প্রতিযোগিতা",
-                topics: [
-                    "১. কুরবাণীর গুরুত্ব ও তাৎপর্য।",
-                    "২. হজ্বের ইতিহাস।",
-                    "৩. দ্বীনী মিল্লাত হেফাজতে উলামায়ে কেরামের কারাবরণ।",
-                    "৪. ধর্মীয় রাজনীতি বন্ধের পায়তারায় উলামায়ে কেরামের করণীয়।",
-                    "৫. তথ্য ও সন্ত্রাসের কবলে ইসলাম ও মুসলিম বিশ্ব।"
-                ],
-                rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "সকাল ৮:৩০ - ১১:৩০ (বিভাগ অনুযায়ী)"
-            },
-            arabic: {
-                title: "আরবী বক্তৃতা প্রতিযোগিতা",
-                rules: "বিষয়: উন্মুক্ত। মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "ভোর ৫:৩০ - ৭:৪৫"
-            },
-            song: {
-                title: "ইসলামী সংগীত প্রতিযোগিতা",
-                rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "সন্ধ্যা ৭:৩০ - ১০:৩০ সেশন"
-            },
-            quiz: {
-                title: "কুইজ প্রতিযোগিতা (কুরবানী বিষয়ক)",
-                rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে। নির্ধারিত পাঠ্যবই থেকে প্রশ্ন করা হবে।",
-                time: "সন্ধ্যা সেশনে"
-            },
-            tajweed: {
-                title: "তাজবীদ প্রতিযোগিতা",
-                rules: "মাদরাসা (হিফজুল কুরআন বিভাগ পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
-                time: "সকাল ১০:০০ - ১০:৪৫"
-            },
-            handwriting: {
-                title: "হস্তলিখন প্রতিযোগিতা (আরবী ও বাংলা)",
-                rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে। লেখা অনুর্ধ্ব ১০ লাইন হতে হবে।",
-                time: "দুপুর ২:৩০ - ৪:০০"
-            },
-        };
+    quran: {
+        title: "কুরআন তিলাওয়াত প্রতিযোগিতা",
+        rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
+        time: "সকাল ৭:৪৫ - ৮:৪৫"
+    },
+    tajweed: {
+        title: "তাজবীদ প্রতিযোগিতা",
+        rules: "মাদরাসা (হিফজুল কুরআন বিভাগ পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
+        time: "সকাল ৯:০০ - ৯:৪০"
+    },
+    hadith: {
+        title: "হিফজুল হাদিস (৪০টি হাদিস বর্ণনাকারীর নামসহ)",
+        rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
+        time: "সকাল ১০:০০ - ১০:৫০"
+    },
+    arabic: {
+        title: "আরবী বক্তৃতা প্রতিযোগিতা",
+        rules: "বিষয়: উন্মুক্ত। মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
+        time: "সকাল ১১:০০ - দুপুর ১২:০০"
+    },
+    bangla: {
+        title: "বাংলা বক্তৃতা প্রতিযোগিতা",
+        topics: [
+            "১. কুরবাণীর গুরুত্ব ও তাৎপর্য।",
+            "২. হজ্বের ইতিহাস।",
+            "৩. দ্বীনী মিল্লাত হেফাজতে উলামায়ে কেরামের কারাবরণ।",
+            "৪. ধর্মীয় রাজনীতি বন্ধের পায়তারায় উলামায়ে কেরামের করণীয়।",
+            "৫. তথ্য ও সন্ত্রাসের কবলে ইসলাম ও মুসলিম বিশ্ব।"
+        ],
+        rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
+        time: "দুপুর ২:০০ - ৩:৩০"
+    },
+    handwriting: {
+        title: "হস্তলিখন প্রতিযোগিতা (আরবী ও বাংলা)",
+        rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে। লেখা অনুর্ধ্ব ১০ লাইন হতে হবে।",
+        time: "বিকেল ৩:৪০ - ৪:৩০"
+    },
+    song: {
+        title: "ইসলামী সংগীত প্রতিযোগিতা (হামদ-নাত)",
+        rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে।",
+        time: "সন্ধ্যা ৭:১৫ - রাত ৮:০০"
+    },
+    bahas: {
+        title: "কোরবানী বহ্স",
+        rules: "নির্ধারিত মাসআলা ও দলীল ভিত্তিক আলোচনা।",
+        time: "রাত ৯:১৫ - ১০:০০"
+    },
+    quiz: {
+        title: "কুইজ প্রতিযোগিতা (কুরবানী বিষয়ক)",
+        rules: "মাদরাসা (হেদায়াতুন্নাহু পর্যন্ত), প্রাথমিক ও মাধ্যমিক স্কুলসহ যেকোনো ছাত্র/ছাত্রী অংশগ্রহণ করতে পারবে। নির্ধারিত পাঠ্যবই থেকে প্রশ্ন করা হবে।",
+        time: "রাত ১০:০০ - ১০:৪৫"
+    },
+};
+
 
         function showDetails(id) {
             const data = categories[id];
@@ -463,7 +558,7 @@
         }
 
         function startCountdown() {
-            const targetDate = new Date("May 24, 2026 20:30:00").getTime();
+            const targetDate = new Date("May 23, 2026 20:30:00").getTime();
             setInterval(function() {
                 const now = new Date().getTime();
                 const distance = targetDate - now;
