@@ -129,7 +129,7 @@
                     <div class="h-px w-10 bg-yellow-600"></div>
                 </div>
 
-                <h1 class="text-3xl md:text-5xl font-black gold-text mb-2">বর্ণাঢ্য প্রতিযোগিতা</h1>
+                <h1 class="text-3xl md:text-5xl font-black gold-text mb-2">সৃজনশীল প্রতিযোগিতা</h1>
                 <p class="text-gray-800 font-black text-lg mb-6">— অনুষ্ঠান ২০২৬ —</p>
                 
                 <div class="bg-yellow-50 p-5 rounded-2xl mb-8 border border-yellow-100 shadow-inner">
@@ -150,23 +150,45 @@
     </div>
 
     <div id="main-site">
-        <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-yellow-200 py-3 px-6 shadow-sm">
-            <div class="max-w-7xl mx-auto flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <img src="https://i.postimg.cc/gkvNrWxK/purush.png" alt="Logo" class="w-10 h-10">
-                    <div>
-                        <p class="text-xs font-bold text-gray-500 leading-none">D.U.D.M ইভেন্ট</p>
-                        <p class="text-emerald-900 font-black text-sm">২০২৬ প্রতিযোগিতা</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 md:gap-8 font-bold text-gray-600 text-sm">
-                    <a href="#info" class="hover:text-yellow-700">তথ্য</a>
-                    <a href="#categories" class="hover:text-yellow-700">বিষয়সমূহ</a>
-                    <a href="#schedule" class="hover:text-yellow-700">সূচী</a>
-                    <a href="#contact" class="hover:text-yellow-700">যোগাযোগ</a>
-                </div>
+        <!-- নেভিগেশন বার -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-yellow-200 py-3 px-6 shadow-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <!-- লোগো সেকশন -->
+        <div class="flex items-center gap-3">
+            <img src="https://i.postimg.cc/gkvNrWxK/purush.png" alt="Logo" class="w-10 h-10">
+            <div>
+                <p class="text-xs font-bold text-gray-500 leading-none">D.U.D.M ইভেন্ট</p>
+                <p class="text-emerald-900 font-black text-sm">২০২৬ প্রতিযোগিতা</p>
             </div>
-        </nav>
+        </div>
+
+        <!-- ডেস্কটপ মেনু (বড় স্ক্রিনে দেখাবে) -->
+        <div class="hidden md:flex gap-8 font-bold text-gray-600 text-sm">
+            <a href="#info" class="hover:text-yellow-700">তথ্য</a>
+            <a href="#categories" class="hover:text-yellow-700">বিষয়সমূহ</a>
+            <a href="#schedule" class="hover:text-yellow-700">সূচী</a>
+            <a href="#contact" class="hover:text-yellow-700">যোগাযোগ</a>
+        </div>
+
+        <!-- ৩ লাইনের মোবাইল মেনু বাটন (ছোট স্ক্রিনে দেখাবে) -->
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-emerald-900 p-2 focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- মোবাইল ড্রপডাউন মেনু কন্টেন্ট -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-yellow-100 absolute w-full left-0 px-6 py-4 shadow-xl animate__animated animate__fadeInDown">
+        <div class="flex flex-col gap-4 font-black text-gray-700 text-lg">
+            <a href="#info" class="mobile-link flex items-center gap-2 border-b border-gray-50 pb-2"><i data-lucide="info" class="w-5 h-5 text-yellow-600"></i> তথ্য</a>
+            <a href="#categories" class="mobile-link flex items-center gap-2 border-b border-gray-50 pb-2"><i data-lucide="layout-grid" class="w-5 h-5 text-yellow-600"></i> বিষয়সমূহ</a>
+            <a href="#schedule" class="mobile-link flex items-center gap-2 border-b border-gray-50 pb-2"><i data-lucide="calendar" class="w-5 h-5 text-yellow-600"></i> সূচী</a>
+            <a href="#contact" class="mobile-link flex items-center gap-2"><i data-lucide="phone" class="w-5 h-5 text-yellow-600"></i> যোগাযোগ</a>
+        </div>
+    </div>
+</nav>
+
 
         <section class="calligraphy-bg min-h-screen flex items-center justify-center text-white px-6 pt-20 relative">
             <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/islamic-art.png');"></div>
@@ -573,6 +595,29 @@
                 document.getElementById("mins").innerText = minutes.toString().padStart(2, '0');
             }, 1000);
         }
+        // মোবাইল মেনু কন্ট্রোল করার জন্য কোড
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.getElementById('menu-icon');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    // মেনু খোলার সময় আইকন পরিবর্তন (Menu থেকে Close)
+    const isHidden = mobileMenu.classList.contains('hidden');
+    menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+    lucide.createIcons();
+});
+
+// মেনুর কোনো লিংকে ক্লিক করলে মেনুটি অটোমেটিক বন্ধ হয়ে যাবে
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+    });
+});
+
     </script>
 </body>
 </html>
